@@ -1,0 +1,53 @@
+
+public class BubbleSort {
+	
+	public int operationsCount = 0;
+	
+	public void bubbleSort(int [] numbers)
+	{
+
+		for (int i = 0 ; i < numbers.length - 1; i++) {
+			
+			operationsCount++; //initializing i
+			operationsCount++; //subtracting 1 from numbers.length
+			operationsCount++; //comparing i to numbers.length
+			operationsCount++; //increasing i
+			
+			for (int j = 0; j < numbers.length - i - 1; j++) {
+				
+				operationsCount++; //initializing j
+				operationsCount++; //subtracting i from numbers.length
+				operationsCount++; //subtracting 1 from numbers.length
+				operationsCount++; //comparing j to numbers.length - i - 1
+				operationsCount++; //increasing j
+				
+				if (numbers[j] > numbers[j + 1])
+					{
+					
+					operationsCount++; //comparing value of numbers[j] to numbers[j + 1]
+					
+					// swap numbers[j + 1] and numbers[j]
+					int temp = numbers[j];
+					
+					operationsCount++; // setting value of temp to numbers[j]
+					
+					numbers[j] = numbers[j + 1];
+					
+					operationsCount++; // setting value of numbers[j] to numbers[j + 1]
+					
+					numbers[j + 1] = temp;
+					
+					operationsCount++; // setting value of numbers[j + 1] to value of temp
+					
+					} 
+			}
+		}
+	}
+	
+	public int returnBubbleSortOperations()
+	{
+		return operationsCount;
+	}
+
+}
+
